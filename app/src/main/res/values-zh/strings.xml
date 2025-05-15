@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">食谱</string>
+    <string name="cat_entrantes">前菜</string>
+    <string name="cat_pescados">鱼类</string>
+    <string name="cat_carnes">肉类</string>
+    <string name="cat_pastyarro">面食和米饭</string>
+    <string name="cat_postres">甜点</string>
+    <string name="dif_baja">低</string>
+    <string name="dif_media">中</string>
+    <string name="dif_alta">高</string>
+    <string name="recetas_recycler_view_description">Lista de Recetas</string>
+    <string name="receta_titulo">食谱</string>
+    <string name="receta_categoria">类别</string>
+    <string name="receta_dificultad">难度</string>
+
+</resources>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Recetas</string>
+    <string name="cat_entrantes">Entrantes</string>
+    <string name="cat_pescados">Pescados</string>
+    <string name="cat_carnes">Carnes</string>
+    <string name="cat_pastyarro">Pastas y Arroces</string>
+    <string name="cat_postres">Postres</string>
+    <string name="dif_baja">Baja</string>
+    <string name="dif_media">Media</string>
+    <string name="dif_alta">Alta</string>
+    <string name="recetas_recycler_view_description">Lista de Recetas</string>
+    <string name="receta_titulo">Receta Titulo</string>
+    <string name="receta_categoria">Categoría</string>
+    <string name="receta_dificultad">Dificultad\n</string>
+</resources>

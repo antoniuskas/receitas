@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Recettes</string>
+    <string name="cat_entrantes">Entrées</string>
+    <string name="cat_pescados">Poissons</string>
+    <string name="cat_carnes">Viandes</string>
+    <string name="cat_pastyarro">Pâtes et Riz</string>
+    <string name="cat_postres">Desserts</string>
+    <string name="dif_baja">Faible</string>
+    <string name="dif_media">Moyenne</string>
+    <string name="dif_alta">Élevée</string>
+    <string name="recetas_recycler_view_description">Lista de Recetas</string>
+    <string name="receta_titulo">Recette</string>
+    <string name="receta_categoria">Catégorie</string>
+    <string name="receta_dificultad">- Difficulté</string>
+
+</resources>

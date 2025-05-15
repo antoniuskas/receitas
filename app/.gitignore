@@ -1,0 +1,17 @@
+# Directorios de build
+/build
+/**/build
+
+# Archivos de configuración de Android Studio
+.idea/
+*.iml
+
+# Archivos de Gradle
+.gradle/
+gradle-wrapper.jar
+
+# Archivos locales de configuración
+local.properties
+
+# Archivos de clave de firma
+*.jks
