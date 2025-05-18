@@ -1,6 +1,11 @@
+// Versión de Room
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("kapt")                             // Plugin KAPT para Room
+    //id("androidx.navigation.safeargs.kotlin")  // Safe Args plugin
 }
 
 android {
@@ -26,39 +31,56 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
+
     buildFeatures {
         viewBinding = true
     }
 }
 
 dependencies {
-
+    val roomVersion = "2.7.1"
+    // Core Android
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.fragment.ktx)
-    implementation(libs.gson)
+
+    // Lifecycle
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel)
+
+    // Coroutines
     implementation(libs.kotlinx.coroutines.android)
+
+    // Navigation Component
+    implementation(libs.androidx.navigation.fragment.ktx)
+    //implementation(libs.androidx.navigation.ui.ktx)
+
+    // Gson for JSON
+    implementation(libs.gson)
+    implementation(libs.support.annotations)
+    implementation(libs.androidx.annotation)
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    val room_version = "2.7.1"
 
-    implementation("androidx.room:room-runtime:$room_version")
+    // Room dependencies
+    //val room_version = "2.7.1"
 
-    // como dice en la documentación hay que elegir entre anotationProcessor a Ksp
-    // que aparece abajo y esta comentada
+    implementation("androidx.room:room-runtime:$roomVersion")
 
     // If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)
     // See Add the KSP plugin to your project
@@ -66,23 +88,13 @@ dependencies {
 
     // If this project only uses Java source, use the Java annotationProcessor
     // No additional plugins are necessary
-    annotationProcessor("androidx.room:room-compiler:$room_version")
+    kapt("androidx.room:room-compiler:$roomVersion")   // Usar KAPT en lugar de annotationProcessor
+    //annotationProcessor("androidx.room:room-compiler:$roomVersion")
 
-    // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:$room_version")
-
-    // optional - RxJava2 support for Room
-    implementation("androidx.room:room-rxjava2:$room_version")
-
-    // optional - RxJava3 support for Room
-    implementation("androidx.room:room-rxjava3:$room_version")
-
-    // optional - Guava support for Room, including Optional and ListenableFuture
-    implementation("androidx.room:room-guava:$room_version")
-
-    // optional - Test helpers
-    testImplementation("androidx.room:room-testing:$room_version")
-
-    // optional - Paging 3 Integration
-    implementation("androidx.room:room-paging:$room_version")
+    // Opcionales
+    implementation("androidx.room:room-rxjava2:$roomVersion")
+    implementation("androidx.room:room-rxjava3:$roomVersion")
+    implementation("androidx.room:room-guava:$roomVersion")
+    testImplementation("androidx.room:room-testing:$roomVersion")
+    implementation("androidx.room:room-paging:$roomVersion")
 }
